@@ -1,164 +1,321 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Chess Beast — Get in Touch With Us</title>
-    <meta name="description" content="Contact Chess Beast for questions, feedback, bug reports, or partnership inquiries. We'd love to hear from you.">
-    <meta name="keywords" content="contact chess beast, chess feedback, bug report, chess website contact">
-    <meta name="author" content="Chess Beast">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://6a2cd4bd62cdf35db3fb0080--starlit-phoenix-8d6c7b.netlify.app/contact.html">
-    <meta property="og:title" content="Contact Chess Beast">
-    <meta property="og:description" content="Get in touch with the Chess Beast team.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://6a2cd4bd62cdf35db3fb0080--starlit-phoenix-8d6c7b.netlify.app/contact.html">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <nav class="site-nav">
-        <a href="index.html" class="nav-brand"><span class="logo-icon">&#9820;</span><span>Chess Beast</span></a>
-        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Toggle navigation">&#9776;</button>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="play.html">Play Chess</a></li>
-            <li><a href="puzzles.html">Puzzles</a></li>
-            <li><a href="learn.html">Learn</a></li>
-            <li><a href="openings.html">Openings</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-    </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact Chess Beast — Get in Touch With Us</title>
+        <meta
+            name="description"
+            content="Contact Chess Beast for questions, feedback, bug reports, or partnership inquiries. We'd love to hear from you."
+        />
+        <meta
+            name="keywords"
+            content="contact chess beast, chess feedback, bug report, chess website contact"
+        />
+        <meta name="author" content="Chess Beast" />
+        <meta name="robots" content="index, follow" />
+        <link
+            rel="canonical"
+            href="https://starlit-phoenix-8d6c7b.netlify.app/contact.html"
+        />
+        <meta property="og:title" content="Contact Chess Beast" />
+        <meta
+            property="og:description"
+            content="Get in touch with the Chess Beast team."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://starlit-phoenix-8d6c7b.netlify.app/contact.html"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <nav class="site-nav">
+            <a href="index.html" class="nav-brand"
+                ><span class="logo-icon">&#9820;</span
+                ><span>Chess Beast</span></a
+            >
+            <button
+                class="nav-toggle"
+                onclick="
+                    document
+                        .querySelector('.nav-links')
+                        .classList.toggle('active')
+                "
+                aria-label="Toggle navigation"
+            >
+                &#9776;
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="play.html">Play Chess</a></li>
+                <li><a href="puzzles.html">Puzzles</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="openings.html">Openings</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
 
-    <div class="page-content">
-        <div class="container">
-            <div class="breadcrumbs">
-                <a href="index.html">Home</a> &rsaquo; <span>Contact</span>
+        <div class="page-content">
+            <div class="container">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> &rsaquo; <span>Contact</span>
+                </div>
+            </div>
+
+            <div class="container">
+                <p class="ad-label">Advertisement</p>
+                <div class="ad-slot ad-leaderboard">
+                    <ins
+                        class="adsbygoogle"
+                        style="
+                            display: inline-block;
+                            width: 728px;
+                            height: 90px;
+                        "
+                        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                        data-ad-slot="CONTACTBANNER1"
+                    ></ins>
+                </div>
+            </div>
+
+            <div class="page-header">
+                <div class="container">
+                    <h1>Contact Us</h1>
+                    <p>
+                        Have a question, suggestion, or just want to say hello?
+                        Reach out to us.
+                    </p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div
+                    style="
+                        display: flex;
+                        gap: 2rem;
+                        justify-content: center;
+                        align-items: flex-start;
+                        flex-wrap: wrap;
+                    "
+                >
+                    <div style="flex: 1; min-width: 300px; max-width: 600px">
+                        <div class="contact-form">
+                            <form
+                                id="contactForm"
+                                onsubmit="handleSubmit(event)"
+                            >
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        required
+                                        placeholder="Enter your name"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        required
+                                        placeholder="your@email.com"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input
+                                        type="text"
+                                        id="subject"
+                                        name="subject"
+                                        required
+                                        placeholder="What's this about?"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        rows="6"
+                                        required
+                                        placeholder="Your message..."
+                                    ></textarea>
+                                </div>
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary"
+                                    style="width: 100%"
+                                >
+                                    Send Message
+                                </button>
+                            </form>
+                            <div
+                                id="form-success"
+                                style="
+                                    display: none;
+                                    text-align: center;
+                                    padding: 2rem;
+                                "
+                            >
+                                <div
+                                    style="font-size: 3rem; margin-bottom: 1rem"
+                                >
+                                    &#9989;
+                                </div>
+                                <h3
+                                    style="
+                                        color: var(--accent);
+                                        margin-bottom: 0.5rem;
+                                    "
+                                >
+                                    Message Sent!
+                                </h3>
+                                <p style="color: var(--text-muted)">
+                                    Thank you for reaching out. We'll get back
+                                    to you as soon as possible.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-form" style="margin-top: 1.5rem">
+                            <h3
+                                style="
+                                    color: var(--accent);
+                                    margin-bottom: 1rem;
+                                "
+                            >
+                                Other Ways to Reach Us
+                            </h3>
+                            <p
+                                style="
+                                    color: var(--text-muted);
+                                    margin-bottom: 1rem;
+                                "
+                            >
+                                <strong>Email:</strong>
+                                <a href="mailto:himanshmewada08@gmail.com"
+                                    >himanshmewada08@gmail.com</a
+                                >
+                            </p>
+                            <p
+                                style="
+                                    color: var(--text-muted);
+                                    margin-bottom: 1rem;
+                                "
+                            >
+                                <strong>Website:</strong>
+                                <a
+                                    href="https://starlit-phoenix-8d6c7b.netlify.app/"
+                                    >Chess Beast</a
+                                >
+                            </p>
+                            <p style="color: var(--text-muted)">
+                                We typically respond within 48 hours.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="flex-shrink: 0; width: 300px">
+                        <p class="ad-label">Advertisement</p>
+                        <div class="ad-slot ad-half-page">
+                            <ins
+                                class="adsbygoogle"
+                                style="
+                                    display: inline-block;
+                                    width: 300px;
+                                    height: 600px;
+                                "
+                                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                data-ad-slot="CONTACTSIDEBAR1"
+                            ></ins>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="container">
             <p class="ad-label">Advertisement</p>
-            <div class="ad-slot ad-leaderboard">
-                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
-                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="CONTACTBANNER1"></ins>
+            <div class="ad-slot ad-banner">
+                <ins
+                    class="adsbygoogle"
+                    style="display: inline-block; width: 468px; height: 60px"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                    data-ad-slot="CONTACTFOOTER1"
+                ></ins>
             </div>
         </div>
 
-        <div class="page-header">
+        <footer class="site-footer">
             <div class="container">
-                <h1>Contact Us</h1>
-                <p>Have a question, suggestion, or just want to say hello? Reach out to us.</p>
-            </div>
-        </div>
-
-        <div class="container">
-            <div style="display:flex;gap:2rem;justify-content:center;align-items:flex-start;flex-wrap:wrap;">
-                <div style="flex:1;min-width:300px;max-width:600px;">
-                    <div class="contact-form">
-                        <form id="contactForm" onsubmit="handleSubmit(event)">
-                            <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" required placeholder="Enter your name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required placeholder="your@email.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" required placeholder="What's this about?">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="6" required placeholder="Your message..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
-                        </form>
-                        <div id="form-success" style="display:none;text-align:center;padding:2rem;">
-                            <div style="font-size:3rem;margin-bottom:1rem;">&#9989;</div>
-                            <h3 style="color:var(--accent);margin-bottom:0.5rem;">Message Sent!</h3>
-                            <p style="color:var(--text-muted);">Thank you for reaching out. We'll get back to you as soon as possible.</p>
-                        </div>
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4>Play</h4>
+                        <ul>
+                            <li><a href="play.html">Play vs AI</a></li>
+                            <li><a href="puzzles.html">Chess Puzzles</a></li>
+                            <li><a href="learn.html">Learn Chess</a></li>
+                            <li><a href="openings.html">Openings</a></li>
+                        </ul>
                     </div>
-
-                    <div class="contact-form" style="margin-top:1.5rem;">
-                        <h3 style="color:var(--accent);margin-bottom:1rem;">Other Ways to Reach Us</h3>
-                        <p style="color:var(--text-muted);margin-bottom:1rem;"><strong>Email:</strong> <a href="mailto:himanshmewada08@gmail.com">himanshmewada08@gmail.com</a></p>
-                        <p style="color:var(--text-muted);margin-bottom:1rem;"><strong>Website:</strong> <a href="https://6a2cd4bd62cdf35db3fb0080--starlit-phoenix-8d6c7b.netlify.app/">Chess Beast</a></p>
-                        <p style="color:var(--text-muted);">We typically respond within 48 hours.</p>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="learn.html#rules">Game Rules</a></li>
+                            <li>
+                                <a href="learn.html#strategy">Strategy Tips</a>
+                            </li>
+                            <li>
+                                <a href="openings.html">Opening Database</a>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-
-                <div style="flex-shrink:0;width:300px;">
-                    <p class="ad-label">Advertisement</p>
-                    <div class="ad-slot ad-half-page">
-                        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px"
-                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="CONTACTSIDEBAR1"></ins>
+                    <div class="footer-col">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="about.html">About Chess Beast</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li>
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="privacy-policy.html#cookies"
+                                    >Cookie Policy</a
+                                >
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <p class="ad-label">Advertisement</p>
-        <div class="ad-slot ad-banner">
-            <ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px"
-                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="CONTACTFOOTER1"></ins>
-        </div>
-    </div>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Play</h4>
-                    <ul>
-                        <li><a href="play.html">Play vs AI</a></li>
-                        <li><a href="puzzles.html">Chess Puzzles</a></li>
-                        <li><a href="learn.html">Learn Chess</a></li>
-                        <li><a href="openings.html">Openings</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="learn.html#rules">Game Rules</a></li>
-                        <li><a href="learn.html#strategy">Strategy Tips</a></li>
-                        <li><a href="openings.html">Opening Database</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>About</h4>
-                    <ul>
-                        <li><a href="about.html">About Chess Beast</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="privacy-policy.html#cookies">Cookie Policy</a></li>
-                    </ul>
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2026 Chess Beast. All rights reserved. |
+                        <a href="privacy-policy.html">Privacy Policy</a> |
+                        <a href="contact.html">Contact</a>
+                    </p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Chess Beast. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="contact.html">Contact</a></p>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script>
-        function handleSubmit(e) {
-            e.preventDefault();
-            document.getElementById('contactForm').style.display = 'none';
-            document.getElementById('form-success').style.display = 'block';
-        }
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</body>
+        <script>
+            function handleSubmit(e) {
+                e.preventDefault();
+                document.getElementById("contactForm").style.display = "none";
+                document.getElementById("form-success").style.display = "block";
+            }
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </body>
 </html>

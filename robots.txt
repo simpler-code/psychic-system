@@ -7,7 +7,7 @@
 User-agent: *
 
 # Sitemap location
-Sitemap: https://6a2cd4bd62cdf35db3fb0080--starlit-phoenix-8d6c7b.netlify.app/sitemap.xml
+Sitemap: https://starlit-phoenix-8d6c7b.netlify.app/sitemap.xml
 
 # Allow all pages to be crawled and indexed
 Allow: /

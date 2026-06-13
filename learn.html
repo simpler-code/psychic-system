@@ -1,196 +1,440 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Chess — Rules, Strategy & Tips for Beginners | Chess Beast</title>
-    <meta name="description" content="Learn how to play chess from scratch. Master piece movements, special rules, opening principles, middle-game strategy, and endgame technique.">
-    <meta name="keywords" content="learn chess, chess rules, chess strategy, how to play chess, chess tutorial, chess for beginners, chess tips">
-    <meta name="author" content="Chess Beast">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://6a2cd4bd62cdf35db3fb0080--starlit-phoenix-8d6c7b.netlify.app/learn.html">
-    <meta property="og:title" content="Learn Chess — Rules, Strategy & Tips for Beginners">
-    <meta property="og:description" content="Master chess from scratch with our comprehensive guide.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://6a2cd4bd62cdf35db3fb0080--starlit-phoenix-8d6c7b.netlify.app/learn.html">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <nav class="site-nav">
-        <a href="index.html" class="nav-brand"><span class="logo-icon">&#9820;</span><span>Chess Beast</span></a>
-        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Toggle navigation">&#9776;</button>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="play.html">Play Chess</a></li>
-            <li><a href="puzzles.html">Puzzles</a></li>
-            <li><a href="learn.html" class="active">Learn</a></li>
-            <li><a href="openings.html">Openings</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Learn Chess — Rules, Strategy & Tips for Beginners | Chess Beast
+        </title>
+        <meta
+            name="description"
+            content="Learn how to play chess from scratch. Master piece movements, special rules, opening principles, middle-game strategy, and endgame technique."
+        />
+        <meta
+            name="keywords"
+            content="learn chess, chess rules, chess strategy, how to play chess, chess tutorial, chess for beginners, chess tips"
+        />
+        <meta name="author" content="Chess Beast" />
+        <meta name="robots" content="index, follow" />
+        <link
+            rel="canonical"
+            href="https://starlit-phoenix-8d6c7b.netlify.app/learn.html"
+        />
+        <meta
+            property="og:title"
+            content="Learn Chess — Rules, Strategy & Tips for Beginners"
+        />
+        <meta
+            property="og:description"
+            content="Master chess from scratch with our comprehensive guide."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://starlit-phoenix-8d6c7b.netlify.app/learn.html"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <nav class="site-nav">
+            <a href="index.html" class="nav-brand"
+                ><span class="logo-icon">&#9820;</span
+                ><span>Chess Beast</span></a
+            >
+            <button
+                class="nav-toggle"
+                onclick="
+                    document
+                        .querySelector('.nav-links')
+                        .classList.toggle('active')
+                "
+                aria-label="Toggle navigation"
+            >
+                &#9776;
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="play.html">Play Chess</a></li>
+                <li><a href="puzzles.html">Puzzles</a></li>
+                <li><a href="learn.html" class="active">Learn</a></li>
+                <li><a href="openings.html">Openings</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-    <div class="page-content">
-        <div class="container">
-            <div class="breadcrumbs">
-                <a href="index.html">Home</a> &rsaquo; <span>Learn Chess</span>
+        <div class="page-content">
+            <div class="container">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> &rsaquo;
+                    <span>Learn Chess</span>
+                </div>
+            </div>
+
+            <div class="container">
+                <p class="ad-label">Advertisement</p>
+                <div class="ad-slot ad-leaderboard">
+                    <ins
+                        class="adsbygoogle"
+                        style="
+                            display: inline-block;
+                            width: 728px;
+                            height: 90px;
+                        "
+                        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                        data-ad-slot="LEARNBANNER1"
+                    ></ins>
+                </div>
+            </div>
+
+            <div class="page-header">
+                <div class="container">
+                    <h1>Learn Chess</h1>
+                    <p>
+                        Master the royal game with our comprehensive guide —
+                        from basic rules to winning strategies.
+                    </p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div
+                    style="
+                        display: flex;
+                        gap: 2rem;
+                        justify-content: center;
+                        align-items: flex-start;
+                        flex-wrap: wrap;
+                    "
+                >
+                    <div
+                        class="article-content"
+                        style="flex: 1; min-width: 300px"
+                    >
+                        <h2 id="rules">Chess Rules</h2>
+                        <p>
+                            Chess is a two-player strategy game played on an 8x8
+                            checkered board. Each player begins with 16 pieces:
+                            one King, one Queen, two Rooks, two Bishops, two
+                            Knights, and eight Pawns. The objective is to
+                            checkmate your opponent's King.
+                        </p>
+
+                        <h3>Piece Movements</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Piece</th>
+                                    <th>Movement</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>&#9812; King</td>
+                                    <td>One square in any direction</td>
+                                    <td>Infinite (the game)</td>
+                                </tr>
+                                <tr>
+                                    <td>&#9813; Queen</td>
+                                    <td>
+                                        Any number of squares diagonally,
+                                        horizontally, or vertically
+                                    </td>
+                                    <td>9 points</td>
+                                </tr>
+                                <tr>
+                                    <td>&#9814; Rook</td>
+                                    <td>
+                                        Any number of squares horizontally or
+                                        vertically
+                                    </td>
+                                    <td>5 points</td>
+                                </tr>
+                                <tr>
+                                    <td>&#9815; Bishop</td>
+                                    <td>Any number of squares diagonally</td>
+                                    <td>3 points</td>
+                                </tr>
+                                <tr>
+                                    <td>&#9816; Knight</td>
+                                    <td>
+                                        L-shape: 2 squares in one direction,
+                                        then 1 square perpendicular
+                                    </td>
+                                    <td>3 points</td>
+                                </tr>
+                                <tr>
+                                    <td>&#9817; Pawn</td>
+                                    <td>
+                                        Forward 1 square (2 from starting
+                                        position), captures diagonally
+                                    </td>
+                                    <td>1 point</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div
+                            class="ad-slot ad-in-content"
+                            style="margin: 2rem auto"
+                        >
+                            <p class="ad-label">Advertisement</p>
+                            <ins
+                                class="adsbygoogle"
+                                style="
+                                    display: inline-block;
+                                    width: 728px;
+                                    height: 90px;
+                                "
+                                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                data-ad-slot="LEARNINCONTENT1"
+                            ></ins>
+                        </div>
+
+                        <h3>Special Rules</h3>
+                        <p>
+                            <strong>Castling</strong> is a special move
+                            involving the King and a Rook. The King moves two
+                            squares toward a Rook, and the Rook jumps to the
+                            square the King crossed. Conditions: neither piece
+                            has moved, the path is clear, and the King is not in
+                            check nor passes through check.
+                        </p>
+                        <p>
+                            <strong>En Passant</strong> allows a pawn that has
+                            just moved two squares forward to be captured by an
+                            opposing pawn as if it had moved only one square.
+                            This capture must be performed immediately after the
+                            two-square advance.
+                        </p>
+                        <p>
+                            <strong>Promotion</strong> occurs when a pawn
+                            reaches the opposite end of the board. It must be
+                            exchanged for a Queen, Rook, Bishop, or Knight of
+                            the same color (almost always a Queen).
+                        </p>
+
+                        <h2 id="strategy">Chess Strategy</h2>
+                        <h3>Opening Principles</h3>
+                        <ul>
+                            <li>
+                                <strong>Control the center</strong> — Occupy or
+                                influence the central squares (e4, d4, e5, d5)
+                                with pawns and pieces.
+                            </li>
+                            <li>
+                                <strong>Develop your pieces</strong> — Bring
+                                your Knights and Bishops into active play early.
+                                Avoid moving the same piece multiple times in
+                                the opening.
+                            </li>
+                            <li>
+                                <strong>Castle early</strong> — Protect your
+                                King by castling, ideally within the first 10
+                                moves.
+                            </li>
+                            <li>
+                                <strong
+                                    >Don't bring the Queen out too early</strong
+                                >
+                                — She can be harassed by lesser pieces and waste
+                                tempi.
+                            </li>
+                        </ul>
+
+                        <h3>Middle Game Strategy</h3>
+                        <ul>
+                            <li>
+                                <strong>Create a plan</strong> — Identify
+                                weaknesses in your opponent's position and
+                                formulate a plan to exploit them.
+                            </li>
+                            <li>
+                                <strong>Coordinate your pieces</strong> — Pieces
+                                work best together. Rooks belong on open files,
+                                bishops on long diagonals.
+                            </li>
+                            <li>
+                                <strong>Look for tactics</strong> — Always be
+                                alert for forks, pins, skewers, discovered
+                                attacks, and deflection.
+                            </li>
+                            <li>
+                                <strong>Manage pawn structure</strong> — Avoid
+                                doubled, isolated, and backward pawns which
+                                become targets.
+                            </li>
+                        </ul>
+
+                        <div
+                            class="ad-slot ad-in-content"
+                            style="margin: 2rem auto"
+                        >
+                            <p class="ad-label">Advertisement</p>
+                            <ins
+                                class="adsbygoogle"
+                                style="
+                                    display: inline-block;
+                                    width: 728px;
+                                    height: 90px;
+                                "
+                                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                data-ad-slot="LEARNINCONTENT2"
+                            ></ins>
+                        </div>
+
+                        <h3>Endgame Principles</h3>
+                        <ul>
+                            <li>
+                                <strong>Activate your King</strong> — In the
+                                endgame, the King becomes a powerful fighting
+                                piece.
+                            </li>
+                            <li>
+                                <strong>Promote a pawn</strong> — Creating a
+                                passed pawn and promoting it is often the path
+                                to victory.
+                            </li>
+                            <li>
+                                <strong>Reduce to won positions</strong> —
+                                Simplify by trading pieces when you have a
+                                material advantage.
+                            </li>
+                            <li>
+                                <strong>Key squares</strong> — Learn key squares
+                                and opposition in King and pawn endings.
+                            </li>
+                        </ul>
+
+                        <h2 id="tips">Tips for Improvement</h2>
+                        <p>
+                            <strong>Solve puzzles daily</strong> — Even 15
+                            minutes of tactical training will dramatically
+                            improve your game. Visit our
+                            <a href="puzzles.html">Chess Puzzles</a> page to
+                            practice.
+                        </p>
+                        <p>
+                            <strong>Analyze your games</strong> — After each
+                            game, review your moves and identify mistakes.
+                            Learning from your own errors is the fastest path to
+                            improvement.
+                        </p>
+                        <p>
+                            <strong>Study master games</strong> — Reviewing
+                            games by grandmasters helps you understand strategic
+                            concepts and typical patterns.
+                        </p>
+                        <p>
+                            <strong>Practice with our AI</strong> — Play
+                            regularly against our
+                            <a href="play.html">chess engine</a> to apply what
+                            you've learned in real games.
+                        </p>
+
+                        <div class="text-center mt-2">
+                            <a href="play.html" class="btn btn-primary"
+                                >&#9812; Play Now</a
+                            >
+                            <a href="puzzles.html" class="btn btn-secondary"
+                                >&#9813; Solve Puzzles</a
+                            >
+                        </div>
+                    </div>
+
+                    <div style="flex-shrink: 0; width: 300px">
+                        <p class="ad-label">Advertisement</p>
+                        <div class="ad-slot ad-half-page">
+                            <ins
+                                class="adsbygoogle"
+                                style="
+                                    display: inline-block;
+                                    width: 300px;
+                                    height: 600px;
+                                "
+                                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                data-ad-slot="LEARNSIDEBAR1"
+                            ></ins>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="container">
             <p class="ad-label">Advertisement</p>
-            <div class="ad-slot ad-leaderboard">
-                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
-                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="LEARNBANNER1"></ins>
+            <div class="ad-slot ad-banner">
+                <ins
+                    class="adsbygoogle"
+                    style="display: inline-block; width: 468px; height: 60px"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                    data-ad-slot="LEARNFOOTER1"
+                ></ins>
             </div>
         </div>
 
-        <div class="page-header">
+        <footer class="site-footer">
             <div class="container">
-                <h1>Learn Chess</h1>
-                <p>Master the royal game with our comprehensive guide — from basic rules to winning strategies.</p>
-            </div>
-        </div>
-
-        <div class="container">
-            <div style="display:flex;gap:2rem;justify-content:center;align-items:flex-start;flex-wrap:wrap;">
-                <div class="article-content" style="flex:1;min-width:300px;">
-                    <h2 id="rules">Chess Rules</h2>
-                    <p>Chess is a two-player strategy game played on an 8x8 checkered board. Each player begins with 16 pieces: one King, one Queen, two Rooks, two Bishops, two Knights, and eight Pawns. The objective is to checkmate your opponent's King.</p>
-
-                    <h3>Piece Movements</h3>
-                    <table>
-                        <thead><tr><th>Piece</th><th>Movement</th><th>Value</th></tr></thead>
-                        <tbody>
-                            <tr><td>&#9812; King</td><td>One square in any direction</td><td>Infinite (the game)</td></tr>
-                            <tr><td>&#9813; Queen</td><td>Any number of squares diagonally, horizontally, or vertically</td><td>9 points</td></tr>
-                            <tr><td>&#9814; Rook</td><td>Any number of squares horizontally or vertically</td><td>5 points</td></tr>
-                            <tr><td>&#9815; Bishop</td><td>Any number of squares diagonally</td><td>3 points</td></tr>
-                            <tr><td>&#9816; Knight</td><td>L-shape: 2 squares in one direction, then 1 square perpendicular</td><td>3 points</td></tr>
-                            <tr><td>&#9817; Pawn</td><td>Forward 1 square (2 from starting position), captures diagonally</td><td>1 point</td></tr>
-                        </tbody>
-                    </table>
-
-                    <div class="ad-slot ad-in-content" style="margin:2rem auto;">
-                        <p class="ad-label">Advertisement</p>
-                        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
-                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="LEARNINCONTENT1"></ins>
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4>Play</h4>
+                        <ul>
+                            <li><a href="play.html">Play vs AI</a></li>
+                            <li><a href="puzzles.html">Chess Puzzles</a></li>
+                            <li><a href="learn.html">Learn Chess</a></li>
+                            <li><a href="openings.html">Openings</a></li>
+                        </ul>
                     </div>
-
-                    <h3>Special Rules</h3>
-                    <p><strong>Castling</strong> is a special move involving the King and a Rook. The King moves two squares toward a Rook, and the Rook jumps to the square the King crossed. Conditions: neither piece has moved, the path is clear, and the King is not in check nor passes through check.</p>
-                    <p><strong>En Passant</strong> allows a pawn that has just moved two squares forward to be captured by an opposing pawn as if it had moved only one square. This capture must be performed immediately after the two-square advance.</p>
-                    <p><strong>Promotion</strong> occurs when a pawn reaches the opposite end of the board. It must be exchanged for a Queen, Rook, Bishop, or Knight of the same color (almost always a Queen).</p>
-
-                    <h2 id="strategy">Chess Strategy</h2>
-                    <h3>Opening Principles</h3>
-                    <ul>
-                        <li><strong>Control the center</strong> — Occupy or influence the central squares (e4, d4, e5, d5) with pawns and pieces.</li>
-                        <li><strong>Develop your pieces</strong> — Bring your Knights and Bishops into active play early. Avoid moving the same piece multiple times in the opening.</li>
-                        <li><strong>Castle early</strong> — Protect your King by castling, ideally within the first 10 moves.</li>
-                        <li><strong>Don't bring the Queen out too early</strong> — She can be harassed by lesser pieces and waste tempi.</li>
-                    </ul>
-
-                    <h3>Middle Game Strategy</h3>
-                    <ul>
-                        <li><strong>Create a plan</strong> — Identify weaknesses in your opponent's position and formulate a plan to exploit them.</li>
-                        <li><strong>Coordinate your pieces</strong> — Pieces work best together. Rooks belong on open files, bishops on long diagonals.</li>
-                        <li><strong>Look for tactics</strong> — Always be alert for forks, pins, skewers, discovered attacks, and deflection.</li>
-                        <li><strong>Manage pawn structure</strong> — Avoid doubled, isolated, and backward pawns which become targets.</li>
-                    </ul>
-
-                    <div class="ad-slot ad-in-content" style="margin:2rem auto;">
-                        <p class="ad-label">Advertisement</p>
-                        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
-                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="LEARNINCONTENT2"></ins>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="learn.html#rules">Game Rules</a></li>
+                            <li>
+                                <a href="learn.html#strategy">Strategy Tips</a>
+                            </li>
+                            <li>
+                                <a href="openings.html">Opening Database</a>
+                            </li>
+                        </ul>
                     </div>
-
-                    <h3>Endgame Principles</h3>
-                    <ul>
-                        <li><strong>Activate your King</strong> — In the endgame, the King becomes a powerful fighting piece.</li>
-                        <li><strong>Promote a pawn</strong> — Creating a passed pawn and promoting it is often the path to victory.</li>
-                        <li><strong>Reduce to won positions</strong> — Simplify by trading pieces when you have a material advantage.</li>
-                        <li><strong>Key squares</strong> — Learn key squares and opposition in King and pawn endings.</li>
-                    </ul>
-
-                    <h2 id="tips">Tips for Improvement</h2>
-                    <p><strong>Solve puzzles daily</strong> — Even 15 minutes of tactical training will dramatically improve your game. Visit our <a href="puzzles.html">Chess Puzzles</a> page to practice.</p>
-                    <p><strong>Analyze your games</strong> — After each game, review your moves and identify mistakes. Learning from your own errors is the fastest path to improvement.</p>
-                    <p><strong>Study master games</strong> — Reviewing games by grandmasters helps you understand strategic concepts and typical patterns.</p>
-                    <p><strong>Practice with our AI</strong> — Play regularly against our <a href="play.html">chess engine</a> to apply what you've learned in real games.</p>
-
-                    <div class="text-center mt-2">
-                        <a href="play.html" class="btn btn-primary">&#9812; Play Now</a>
-                        <a href="puzzles.html" class="btn btn-secondary">&#9813; Solve Puzzles</a>
+                    <div class="footer-col">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="about.html">About Chess Beast</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li>
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="privacy-policy.html#cookies"
+                                    >Cookie Policy</a
+                                >
+                            </li>
+                        </ul>
                     </div>
                 </div>
-
-                <div style="flex-shrink:0;width:300px;">
-                    <p class="ad-label">Advertisement</p>
-                    <div class="ad-slot ad-half-page">
-                        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px"
-                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="LEARNSIDEBAR1"></ins>
-                    </div>
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2026 Chess Beast. All rights reserved. |
+                        <a href="privacy-policy.html">Privacy Policy</a> |
+                        <a href="contact.html">Contact</a>
+                    </p>
                 </div>
             </div>
-        </div>
-    </div>
+        </footer>
 
-    <div class="container">
-        <p class="ad-label">Advertisement</p>
-        <div class="ad-slot ad-banner">
-            <ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px"
-                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="LEARNFOOTER1"></ins>
-        </div>
-    </div>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Play</h4>
-                    <ul>
-                        <li><a href="play.html">Play vs AI</a></li>
-                        <li><a href="puzzles.html">Chess Puzzles</a></li>
-                        <li><a href="learn.html">Learn Chess</a></li>
-                        <li><a href="openings.html">Openings</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="learn.html#rules">Game Rules</a></li>
-                        <li><a href="learn.html#strategy">Strategy Tips</a></li>
-                        <li><a href="openings.html">Opening Database</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>About</h4>
-                    <ul>
-                        <li><a href="about.html">About Chess Beast</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="privacy-policy.html#cookies">Cookie Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Chess Beast. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="contact.html">Contact</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</body>
+        <script>
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </body>
 </html>

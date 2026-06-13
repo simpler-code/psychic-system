@@ -1,184 +1,335 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess Puzzles — Interactive Tactical Trainer | Chess Beast</title>
-    <meta name="description" content="Solve free interactive chess puzzles. Train your tactics with mate-in-1 and mate-in-2 puzzles. Improve your pattern recognition and calculation skills.">
-    <meta name="keywords" content="chess puzzles, chess tactics, mate in 1, mate in 2, chess trainer, tactical puzzles, chess problems">
-    <meta name="author" content="Chess Beast">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://6a2cd4bd62cdf35db3fb0080--starlit-phoenix-8d6c7b.netlify.app/puzzles.html">
-    <meta property="og:title" content="Chess Puzzles — Interactive Tactical Trainer">
-    <meta property="og:description" content="Train your chess tactics with interactive mate-in-1 and mate-in-2 puzzles.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://6a2cd4bd62cdf35db3fb0080--starlit-phoenix-8d6c7b.netlify.app/puzzles.html">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <nav class="site-nav">
-        <a href="index.html" class="nav-brand"><span class="logo-icon">&#9820;</span><span>Chess Beast</span></a>
-        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Toggle navigation">&#9776;</button>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="play.html">Play Chess</a></li>
-            <li><a href="puzzles.html" class="active">Puzzles</a></li>
-            <li><a href="learn.html">Learn</a></li>
-            <li><a href="openings.html">Openings</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Chess Puzzles — Interactive Tactical Trainer | Chess Beast
+        </title>
+        <meta
+            name="description"
+            content="Solve free interactive chess puzzles. Train your tactics with mate-in-1 and mate-in-2 puzzles. Improve your pattern recognition and calculation skills."
+        />
+        <meta
+            name="keywords"
+            content="chess puzzles, chess tactics, mate in 1, mate in 2, chess trainer, tactical puzzles, chess problems"
+        />
+        <meta name="author" content="Chess Beast" />
+        <meta name="robots" content="index, follow" />
+        <link
+            rel="canonical"
+            href="https://starlit-phoenix-8d6c7b.netlify.app/puzzles.html"
+        />
+        <meta
+            property="og:title"
+            content="Chess Puzzles — Interactive Tactical Trainer"
+        />
+        <meta
+            property="og:description"
+            content="Train your chess tactics with interactive mate-in-1 and mate-in-2 puzzles."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://starlit-phoenix-8d6c7b.netlify.app/puzzles.html"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <nav class="site-nav">
+            <a href="index.html" class="nav-brand"
+                ><span class="logo-icon">&#9820;</span
+                ><span>Chess Beast</span></a
+            >
+            <button
+                class="nav-toggle"
+                onclick="
+                    document
+                        .querySelector('.nav-links')
+                        .classList.toggle('active')
+                "
+                aria-label="Toggle navigation"
+            >
+                &#9776;
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="play.html">Play Chess</a></li>
+                <li><a href="puzzles.html" class="active">Puzzles</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="openings.html">Openings</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-    <div class="page-content">
-        <div class="container">
-            <div class="breadcrumbs">
-                <a href="index.html">Home</a> &rsaquo; <span>Chess Puzzles</span>
-            </div>
-        </div>
-
-        <div class="container">
-            <p class="ad-label">Advertisement</p>
-            <div class="ad-slot ad-leaderboard">
-                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
-                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="PUZZLEBANNER1"></ins>
-            </div>
-        </div>
-
-        <div class="page-header">
+        <div class="page-content">
             <div class="container">
-                <h1>Chess Puzzles</h1>
-                <p>Sharpen your tactical vision with interactive puzzles. Find the winning move!</p>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="puzzle-container">
-                <div class="puzzle-board-wrap">
-                    <div id="board-outer">
-                        <div class="coord-col" id="rank-labels"></div>
-                        <div id="board"></div>
-                    </div>
-                    <div class="coord-row" id="file-labels"></div>
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> &rsaquo;
+                    <span>Chess Puzzles</span>
                 </div>
+            </div>
 
-                <div class="puzzle-info">
-                    <div class="puzzle-card">
-                        <h3>Puzzle <span id="puzzle-num">1</span> / <span id="puzzle-total">8</span></h3>
-                        <p id="puzzle-instruction">White to move. Find mate in 1!</p>
-                        <div class="difficulty-selector">
-                            <button class="diff-btn active" onclick="setDifficulty('easy')">Mate in 1</button>
-                            <button class="diff-btn" onclick="setDifficulty('hard')">Mate in 2</button>
+            <div class="container">
+                <p class="ad-label">Advertisement</p>
+                <div class="ad-slot ad-leaderboard">
+                    <ins
+                        class="adsbygoogle"
+                        style="
+                            display: inline-block;
+                            width: 728px;
+                            height: 90px;
+                        "
+                        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                        data-ad-slot="PUZZLEBANNER1"
+                    ></ins>
+                </div>
+            </div>
+
+            <div class="page-header">
+                <div class="container">
+                    <h1>Chess Puzzles</h1>
+                    <p>
+                        Sharpen your tactical vision with interactive puzzles.
+                        Find the winning move!
+                    </p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="puzzle-container">
+                    <div class="puzzle-board-wrap">
+                        <div id="board-outer">
+                            <div class="coord-col" id="rank-labels"></div>
+                            <div id="board"></div>
                         </div>
+                        <div class="coord-row" id="file-labels"></div>
                     </div>
 
-                    <div class="puzzle-card">
-                        <div id="puzzle-status" class="puzzle-status"></div>
-                        <div style="display:flex;gap:0.5rem;">
-                            <button class="btn btn-primary" style="flex:1;padding:0.6rem;font-size:0.85rem;" onclick="nextPuzzle()">Next Puzzle</button>
-                            <button class="btn btn-secondary" style="flex:1;padding:0.6rem;font-size:0.85rem;" onclick="resetPuzzle()">Retry</button>
+                    <div class="puzzle-info">
+                        <div class="puzzle-card">
+                            <h3>
+                                Puzzle <span id="puzzle-num">1</span> /
+                                <span id="puzzle-total">8</span>
+                            </h3>
+                            <p id="puzzle-instruction">
+                                White to move. Find mate in 1!
+                            </p>
+                            <div class="difficulty-selector">
+                                <button
+                                    class="diff-btn active"
+                                    onclick="setDifficulty('easy')"
+                                >
+                                    Mate in 1
+                                </button>
+                                <button
+                                    class="diff-btn"
+                                    onclick="setDifficulty('hard')"
+                                >
+                                    Mate in 2
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="puzzle-card">
+                            <div id="puzzle-status" class="puzzle-status"></div>
+                            <div style="display: flex; gap: 0.5rem">
+                                <button
+                                    class="btn btn-primary"
+                                    style="
+                                        flex: 1;
+                                        padding: 0.6rem;
+                                        font-size: 0.85rem;
+                                    "
+                                    onclick="nextPuzzle()"
+                                >
+                                    Next Puzzle
+                                </button>
+                                <button
+                                    class="btn btn-secondary"
+                                    style="
+                                        flex: 1;
+                                        padding: 0.6rem;
+                                        font-size: 0.85rem;
+                                    "
+                                    onclick="resetPuzzle()"
+                                >
+                                    Retry
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="puzzle-card">
+                            <h3>Score</h3>
+                            <p
+                                style="
+                                    font-size: 1.5rem;
+                                    color: var(--accent);
+                                    font-weight: 600;
+                                "
+                            >
+                                <span id="score-correct">0</span> /
+                                <span id="score-total">0</span>
+                            </p>
+                            <p
+                                style="
+                                    font-size: 0.8rem;
+                                    color: var(--text-muted);
+                                "
+                            >
+                                Correct answers
+                            </p>
+                        </div>
+
+                        <!-- Sidebar Ad -->
+                        <p class="ad-label">Advertisement</p>
+                        <div class="ad-slot ad-medium-rect">
+                            <ins
+                                class="adsbygoogle"
+                                style="
+                                    display: inline-block;
+                                    width: 300px;
+                                    height: 250px;
+                                "
+                                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                data-ad-slot="PUZZLESIDEBAR1"
+                            ></ins>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="puzzle-card">
-                        <h3>Score</h3>
-                        <p style="font-size:1.5rem;color:var(--accent);font-weight:600;">
-                            <span id="score-correct">0</span> / <span id="score-total">0</span>
+            <div class="container">
+                <p class="ad-label">Advertisement</p>
+                <div class="ad-slot ad-in-content">
+                    <ins
+                        class="adsbygoogle"
+                        style="
+                            display: inline-block;
+                            width: 728px;
+                            height: 90px;
+                        "
+                        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                        data-ad-slot="PUZZLEINCONTENT1"
+                    ></ins>
+                </div>
+            </div>
+
+            <section class="games-section">
+                <div class="container">
+                    <div class="article-content" style="padding: 0">
+                        <h2>Why Solve Chess Puzzles?</h2>
+                        <p>
+                            Regular puzzle solving is one of the most effective
+                            ways to improve at chess. Tactics appear in every
+                            game — from casual blitz matches to grandmaster
+                            tournaments. By training with puzzles, you develop
+                            pattern recognition that helps you spot winning
+                            combinations during real games.
                         </p>
-                        <p style="font-size:0.8rem;color:var(--text-muted);">Correct answers</p>
-                    </div>
-
-                    <!-- Sidebar Ad -->
-                    <p class="ad-label">Advertisement</p>
-                    <div class="ad-slot ad-medium-rect">
-                        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px"
-                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="PUZZLESIDEBAR1"></ins>
+                        <h3>Tips for Success</h3>
+                        <ul>
+                            <li>
+                                <strong>Look for checks first</strong> — Forcing
+                                moves limit your opponent's replies and often
+                                lead to forced mates.
+                            </li>
+                            <li>
+                                <strong>Consider all pieces</strong> — The
+                                correct move often involves an underutilized
+                                piece.
+                            </li>
+                            <li>
+                                <strong>Visualize before moving</strong> — Try
+                                to calculate the full sequence before making
+                                your move.
+                            </li>
+                            <li>
+                                <strong>Study mating patterns</strong> —
+                                Back-rank mates, smothered mates, and Arabian
+                                mates appear frequently.
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
 
         <div class="container">
             <p class="ad-label">Advertisement</p>
-            <div class="ad-slot ad-in-content">
-                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
-                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="PUZZLEINCONTENT1"></ins>
+            <div class="ad-slot ad-banner">
+                <ins
+                    class="adsbygoogle"
+                    style="display: inline-block; width: 468px; height: 60px"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                    data-ad-slot="PUZZLEFOOTER1"
+                ></ins>
             </div>
         </div>
 
-        <section class="games-section">
+        <footer class="site-footer">
             <div class="container">
-                <div class="article-content" style="padding:0;">
-                    <h2>Why Solve Chess Puzzles?</h2>
-                    <p>Regular puzzle solving is one of the most effective ways to improve at chess. Tactics appear in every game — from casual blitz matches to grandmaster tournaments. By training with puzzles, you develop pattern recognition that helps you spot winning combinations during real games.</p>
-                    <h3>Tips for Success</h3>
-                    <ul>
-                        <li><strong>Look for checks first</strong> — Forcing moves limit your opponent's replies and often lead to forced mates.</li>
-                        <li><strong>Consider all pieces</strong> — The correct move often involves an underutilized piece.</li>
-                        <li><strong>Visualize before moving</strong> — Try to calculate the full sequence before making your move.</li>
-                        <li><strong>Study mating patterns</strong> — Back-rank mates, smothered mates, and Arabian mates appear frequently.</li>
-                    </ul>
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4>Play</h4>
+                        <ul>
+                            <li><a href="play.html">Play vs AI</a></li>
+                            <li><a href="puzzles.html">Chess Puzzles</a></li>
+                            <li><a href="learn.html">Learn Chess</a></li>
+                            <li><a href="openings.html">Openings</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="learn.html#rules">Game Rules</a></li>
+                            <li>
+                                <a href="learn.html#strategy">Strategy Tips</a>
+                            </li>
+                            <li>
+                                <a href="openings.html">Opening Database</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="about.html">About Chess Beast</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li>
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="privacy-policy.html#cookies"
+                                    >Cookie Policy</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2026 Chess Beast. All rights reserved. |
+                        <a href="privacy-policy.html">Privacy Policy</a> |
+                        <a href="contact.html">Contact</a>
+                    </p>
                 </div>
             </div>
-        </section>
-    </div>
+        </footer>
 
-    <div class="container">
-        <p class="ad-label">Advertisement</p>
-        <div class="ad-slot ad-banner">
-            <ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px"
-                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="PUZZLEFOOTER1"></ins>
-        </div>
-    </div>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Play</h4>
-                    <ul>
-                        <li><a href="play.html">Play vs AI</a></li>
-                        <li><a href="puzzles.html">Chess Puzzles</a></li>
-                        <li><a href="learn.html">Learn Chess</a></li>
-                        <li><a href="openings.html">Openings</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="learn.html#rules">Game Rules</a></li>
-                        <li><a href="learn.html#strategy">Strategy Tips</a></li>
-                        <li><a href="openings.html">Opening Database</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>About</h4>
-                    <ul>
-                        <li><a href="about.html">About Chess Beast</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="privacy-policy.html#cookies">Cookie Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Chess Beast. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="contact.html">Contact</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="chess.js"></script>
-    <script src="puzzles.js"></script>
-    <script>
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</body>
+        <script src="chess.js"></script>
+        <script src="puzzles.js"></script>
+        <script>
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </body>
 </html>
