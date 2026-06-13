@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chess — Play vs AI</title>
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <!-- Color choice screen -->
+        <div id="color-picker">
+            <h1>Chess</h1>
+            <p>Choose your side to begin</p>
+            <div class="piece-choice">
+                <button class="choice-btn" onclick="startGame('white')">
+                    <span class="piece-icon">♔</span>
+                    Play White
+                </button>
+                <button class="choice-btn" onclick="startGame('black')">
+                    <span class="piece-icon">♚</span>
+                    Play Black
+                </button>
+            </div>
+        </div>
+
+        <!-- Game screen -->
+        <div id="game">
+            <div id="board-wrap">
+                <div id="board-outer">
+                    <div class="coord-col" id="rank-labels"></div>
+                    <div id="board"></div>
+                </div>
+                <div class="coord-row" id="file-labels"></div>
+            </div>
+
+            <div id="panel">
+                <div class="card">
+                    <div id="ai-badge">AI · ~2100 ELO</div>
+                    <div id="status-title">White to move</div>
+                    <div id="status-text">Select a piece to begin.</div>
+                    <div id="thinking-indicator">
+                        <div class="dot-pulse">
+                            <span></span><span></span><span></span>
+                        </div>
+                        Thinking…
+                    </div>
+                </div>
+
+                <div class="card" id="captured-wrap">
+                    <div class="cap-label">Captured by you</div>
+                    <div class="captured-row" id="cap-by-player"></div>
+                    <div class="cap-label" style="margin-top: 8px">
+                        Captured by AI
+                    </div>
+                    <div class="captured-row" id="cap-by-ai"></div>
+                </div>
+
+                <div class="card">
+                    <div
+                        style="
+                            font-size: 0.75rem;
+                            color: var(--text-muted);
+                            margin-bottom: 8px;
+                        "
+                    >
+                        Move history
+                    </div>
+                    <div id="moves-list"></div>
+                </div>
+
+                <button id="btn-new" onclick="newGame()">New Game</button>
+            </div>
+        </div>
+
+        <!-- Result overlay -->
+        <div id="result-overlay">
+            <div id="result-box">
+                <h2 id="result-title">Game Over</h2>
+                <p id="result-desc"></p>
+                <button onclick="newGame()">Play Again</button>
+            </div>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
