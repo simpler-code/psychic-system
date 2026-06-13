@@ -22,6 +22,8 @@ Allow: /privacy-policy.html
 Allow: /styles.css
 Allow: /chess.js
 Allow: /puzzles.js
+# Allow ads.txt specifically
+Allow: /Ads.txt
 
 # Disallow access to unnecessary files
 Disallow: /README.md
