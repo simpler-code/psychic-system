@@ -1,18 +1,34 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-5SC4VKD37P"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-5SC4VKD37P");
+        </script>
+
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>
-            Privacy Policy — Chess Beast | Google AdSense & Cookie Disclosure
+            Privacy Policy — Chess Beast | Google Analytics, AdSense & Cookie
+            Disclosure
         </title>
         <meta
             name="description"
-            content="Chess Beast Privacy Policy. Learn how we collect, use, and protect your data. Information about Google AdSense, cookies, and third-party advertising on our website."
+            content="Chess Beast Privacy Policy. Learn how we collect, use, and protect your data. Information about Google Analytics, Google AdSense, cookies, and third-party services on our website."
         />
         <meta
             name="keywords"
-            content="privacy policy, chess beast privacy, Google AdSense, cookies, data protection, GDPR, CCPA"
+            content="privacy policy, chess beast privacy, Google Analytics, Google AdSense, cookies, data protection, GDPR, CCPA, cookie consent"
         />
         <meta name="author" content="Chess Beast" />
         <meta name="robots" content="index, follow" />
@@ -21,8 +37,304 @@
             href="https://starlit-phoenix-8d6c7b.netlify.app/privacy-policy.html"
         />
         <link rel="stylesheet" href="styles.css" />
+
+        <!-- Cookie Consent Banner Styles -->
+        <style>
+            .cookie-banner {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: var(--surface);
+                border-top: 1px solid var(--border);
+                padding: 1rem 1.5rem;
+                z-index: 9999;
+                display: none;
+                box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+            }
+            .cookie-banner.active {
+                display: block;
+            }
+            .cookie-banner-inner {
+                max-width: var(--content-max);
+                margin: 0 auto;
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .cookie-banner p {
+                font-size: 0.9rem;
+                color: var(--text-muted);
+                margin: 0;
+                flex: 1;
+                min-width: 250px;
+            }
+            .cookie-banner a {
+                color: var(--accent);
+            }
+            .cookie-actions {
+                display: flex;
+                gap: 0.5rem;
+                flex-shrink: 0;
+            }
+            .cookie-btn {
+                padding: 0.5rem 1.25rem;
+                border-radius: 6px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                cursor: pointer;
+                border: none;
+                transition: all 0.2s;
+            }
+            .cookie-btn-accept {
+                background: var(--accent);
+                color: #1a1209;
+            }
+            .cookie-btn-accept:hover {
+                background: #d4b87a;
+            }
+            .cookie-btn-decline {
+                background: transparent;
+                color: var(--text-muted);
+                border: 1px solid var(--border);
+            }
+            .cookie-btn-decline:hover {
+                border-color: var(--accent);
+                color: var(--accent);
+            }
+            .cookie-btn-preferences {
+                background: transparent;
+                color: var(--accent);
+                border: 1px solid var(--accent-dim);
+            }
+            .cookie-btn-preferences:hover {
+                background: rgba(201, 169, 110, 0.08);
+            }
+
+            /* Cookie Preferences Modal */
+            .cookie-modal-overlay {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.7);
+                z-index: 10000;
+                display: none;
+                align-items: center;
+                justify-content: center;
+            }
+            .cookie-modal-overlay.active {
+                display: flex;
+            }
+            .cookie-modal {
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                padding: 2rem;
+                max-width: 500px;
+                width: 90%;
+                max-height: 80vh;
+                overflow-y: auto;
+            }
+            .cookie-modal h3 {
+                color: var(--accent);
+                margin-bottom: 1rem;
+                font-size: 1.25rem;
+            }
+            .cookie-modal p {
+                color: var(--text-muted);
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+                line-height: 1.6;
+            }
+            .cookie-category {
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 1rem;
+                margin-bottom: 0.75rem;
+            }
+            .cookie-category-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0.5rem;
+            }
+            .cookie-category h4 {
+                font-size: 1rem;
+                color: var(--text);
+                margin: 0;
+            }
+            .cookie-category p {
+                font-size: 0.85rem;
+                margin: 0;
+                color: #777;
+            }
+            .toggle-switch {
+                position: relative;
+                width: 44px;
+                height: 24px;
+                background: var(--border);
+                border-radius: 12px;
+                cursor: pointer;
+                transition: background 0.2s;
+                flex-shrink: 0;
+            }
+            .toggle-switch.active {
+                background: var(--accent);
+            }
+            .toggle-switch::after {
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background: var(--text);
+                border-radius: 50%;
+                top: 2px;
+                left: 2px;
+                transition: transform 0.2s;
+            }
+            .toggle-switch.active::after {
+                transform: translateX(20px);
+                background: #1a1209;
+            }
+            .toggle-switch.disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+            .cookie-modal-actions {
+                display: flex;
+                gap: 0.5rem;
+                margin-top: 1.5rem;
+            }
+            .cookie-modal-actions .cookie-btn {
+                flex: 1;
+            }
+
+            @media (max-width: 600px) {
+                .cookie-banner-inner {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                .cookie-actions {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        </style>
+        <base target="_blank" />
     </head>
     <body>
+        <!-- Cookie Consent Banner -->
+        <div class="cookie-banner" id="cookie-banner">
+            <div class="cookie-banner-inner">
+                <p>
+                    We use cookies and similar technologies to enhance your
+                    experience, analyze traffic, and serve personalized ads. By
+                    clicking "Accept All", you consent to our use of cookies.
+                    <a href="privacy-policy.html#cookies">Learn more</a> or
+                    <a href="#" onclick="showCookiePreferences(event)"
+                        >manage preferences</a
+                    >.
+                </p>
+                <div class="cookie-actions">
+                    <button
+                        class="cookie-btn cookie-btn-preferences"
+                        onclick="showCookiePreferences(event)"
+                    >
+                        Preferences
+                    </button>
+                    <button
+                        class="cookie-btn cookie-btn-decline"
+                        onclick="declineCookies()"
+                    >
+                        Decline
+                    </button>
+                    <button
+                        class="cookie-btn cookie-btn-accept"
+                        onclick="acceptAllCookies()"
+                    >
+                        Accept All
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cookie Preferences Modal -->
+        <div
+            class="cookie-modal-overlay"
+            id="cookie-modal"
+            onclick="closeCookieModal(event)"
+        >
+            <div class="cookie-modal" onclick="event.stopPropagation()">
+                <h3>Cookie Preferences</h3>
+                <p>
+                    Manage your cookie preferences below. Essential cookies
+                    cannot be disabled as they are necessary for the website to
+                    function.
+                </p>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h4>Essential Cookies</h4>
+                        <div
+                            class="toggle-switch active disabled"
+                            id="toggle-essential"
+                        ></div>
+                    </div>
+                    <p>
+                        Required for the website to function properly. These
+                        cannot be disabled.
+                    </p>
+                </div>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h4>Analytics Cookies (Google Analytics)</h4>
+                        <div
+                            class="toggle-switch active"
+                            id="toggle-analytics"
+                            onclick="toggleCookieCategory('analytics')"
+                        ></div>
+                    </div>
+                    <p>
+                        Help us understand how visitors interact with our
+                        website. Collects anonymous data about page views,
+                        session duration, and user behavior.
+                    </p>
+                </div>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h4>Advertising Cookies (Google AdSense)</h4>
+                        <div
+                            class="toggle-switch active"
+                            id="toggle-advertising"
+                            onclick="toggleCookieCategory('advertising')"
+                        ></div>
+                    </div>
+                    <p>
+                        Used to deliver relevant advertisements and measure
+                        their effectiveness. Includes the DoubleClick cookie.
+                    </p>
+                </div>
+
+                <div class="cookie-modal-actions">
+                    <button
+                        class="cookie-btn cookie-btn-decline"
+                        onclick="saveCookiePreferences()"
+                    >
+                        Save Preferences
+                    </button>
+                    <button
+                        class="cookie-btn cookie-btn-accept"
+                        onclick="acceptAllCookies()"
+                    >
+                        Accept All
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <nav class="site-nav">
             <a href="index.html" class="nav-brand"
                 ><span class="logo-icon">&#9820;</span
@@ -91,9 +403,10 @@
                             >https://starlit-phoenix-8d6c7b.netlify.app/</a
                         >
                         (the "Website"). This policy is designed to comply with
-                        Google AdSense requirements, the General Data Protection
-                        Regulation (GDPR), the California Consumer Privacy Act
-                        (CCPA), and other applicable privacy laws.
+                        Google Analytics and Google AdSense program policies,
+                        the General Data Protection Regulation (GDPR), the
+                        California Consumer Privacy Act (CCPA), and other
+                        applicable privacy laws.
                     </p>
 
                     <p>
@@ -124,13 +437,20 @@
                         tracking technologies, including:
                     </p>
                     <ul>
-                        <li>IP address</li>
+                        <li>IP address (may be anonymized)</li>
                         <li>Browser type and version</li>
                         <li>Device type and operating system</li>
                         <li>Pages visited and time spent on pages</li>
                         <li>Referring website</li>
                         <li>Geographic location (country/city level)</li>
+                        <li>Session duration and interaction patterns</li>
+                        <li>Scroll depth and click behavior</li>
                     </ul>
+                    <p>
+                        This information is collected primarily through
+                        <strong>Google Analytics</strong> and is used in an
+                        aggregated, anonymous form to improve our Website.
+                    </p>
 
                     <div
                         class="ad-slot ad-in-content"
@@ -152,10 +472,10 @@
                     <h2 id="cookies">Cookies and Tracking Technologies</h2>
                     <p>
                         Our Website uses cookies and similar tracking
-                        technologies to improve your browsing experience and
-                        serve personalized advertisements. A cookie is a small
-                        text file stored on your device when you visit a
-                        website.
+                        technologies to improve your browsing experience,
+                        analyze traffic patterns, and serve personalized
+                        advertisements. A cookie is a small text file stored on
+                        your device when you visit a website.
                     </p>
 
                     <h3>Types of Cookies We Use</h3>
@@ -163,23 +483,106 @@
                         <li>
                             <strong>Essential Cookies:</strong> Necessary for
                             the Website to function properly. These cannot be
-                            disabled.
+                            disabled. They include session cookies that maintain
+                            your preferences during your visit.
                         </li>
                         <li>
-                            <strong>Analytics Cookies:</strong> Help us
-                            understand how visitors interact with our Website
-                            (e.g., Google Analytics).
+                            <strong
+                                >Analytics Cookies (Google Analytics):</strong
+                            >
+                            Help us understand how visitors interact with our
+                            Website. These cookies collect anonymous data about
+                            page views, session duration, bounce rates, and user
+                            flows. Google Analytics may set cookies including
+                            <code>_ga</code>, <code>_gid</code>, and
+                            <code>_gat</code>.
                         </li>
                         <li>
-                            <strong>Advertising Cookies:</strong> Used by Google
-                            AdSense and other advertising partners to deliver
-                            relevant ads and measure their effectiveness.
+                            <strong
+                                >Advertising Cookies (Google AdSense):</strong
+                            >
+                            Used by Google AdSense and other advertising
+                            partners to deliver relevant ads and measure their
+                            effectiveness. Includes the DoubleClick cookie
+                            (<code>IDE</code>) and conversion tracking cookies.
                         </li>
                         <li>
                             <strong>Preference Cookies:</strong> Remember your
-                            settings and preferences for future visits.
+                            settings and preferences for future visits, such as
+                            cookie consent choices.
                         </li>
                     </ul>
+
+                    <h3>Google Analytics</h3>
+                    <p>
+                        We use Google Analytics, a web analytics service
+                        provided by Google Inc., to track and report website
+                        traffic. Google Analytics uses cookies to collect
+                        information about your use of our Website, including:
+                    </p>
+                    <ul>
+                        <li>How you arrived at our Website</li>
+                        <li>Which pages you visit and for how long</li>
+                        <li>Your interactions with page elements</li>
+                        <li>Your device and browser characteristics</li>
+                        <li>Your approximate geographic location</li>
+                    </ul>
+                    <p>
+                        This data is transmitted to and stored by Google on
+                        servers that may be located in the United States. Google
+                        uses this data to evaluate your use of our Website,
+                        compile reports on website activity, and provide other
+                        services related to website activity and internet usage.
+                    </p>
+                    <p>
+                        Google Analytics collects IP addresses. We have enabled
+                        IP anonymization where possible, which means Google will
+                        truncate/anonymize the last octet of the IP address for
+                        Member States of the European Union. However, complete
+                        IP anonymization cannot be guaranteed.
+                    </p>
+                    <p>
+                        You can prevent Google Analytics from tracking your
+                        activity by:
+                    </p>
+                    <ul>
+                        <li>
+                            Installing the
+                            <a
+                                href="https://tools.google.com/dlpage/gaoptout"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Google Analytics Opt-out Browser Add-on
+                            </a>
+                        </li>
+                        <li>
+                            Adjusting your cookie preferences using our
+                            <a
+                                href="#"
+                                onclick="
+                                    showCookiePreferences(event);
+                                    return false;
+                                "
+                            >
+                                Cookie Consent Manager
+                            </a>
+                        </li>
+                        <li>
+                            Using browser settings to block third-party cookies
+                        </li>
+                    </ul>
+                    <p>
+                        For more information about Google Analytics privacy
+                        practices, please visit:
+                        <a
+                            href="https://support.google.com/analytics/answer/6004245"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Google Analytics Privacy & Terms
+                        </a>
+                    </p>
 
                     <h3>Google AdSense and DoubleClick Cookie</h3>
                     <p>
@@ -209,6 +612,36 @@
                         >.
                     </p>
 
+                    <h3>Cookie Consent and Management</h3>
+                    <p>
+                        When you first visit our Website, you will be presented
+                        with a cookie consent banner allowing you to:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Accept All Cookies:</strong> Consent to all
+                            cookie types
+                        </li>
+                        <li>
+                            <strong>Decline Non-Essential Cookies:</strong> Only
+                            allow essential cookies
+                        </li>
+                        <li>
+                            <strong>Manage Preferences:</strong> Choose which
+                            cookie categories to allow
+                        </li>
+                    </ul>
+                    <p>
+                        You can change your cookie preferences at any time by
+                        clicking the "Cookie Preferences" link in the footer of
+                        any page or by visiting this Privacy Policy page.
+                    </p>
+                    <p>
+                        Please note that disabling analytics or advertising
+                        cookies may affect the functionality of certain features
+                        and the relevance of ads displayed.
+                    </p>
+
                     <h2>How We Use Your Information</h2>
                     <p>
                         We use the information we collect for the following
@@ -220,12 +653,20 @@
                             services
                         </li>
                         <li>
+                            To analyze website traffic, user behavior, and
+                            engagement patterns using Google Analytics
+                        </li>
+                        <li>
+                            To identify popular content and optimize user
+                            experience
+                        </li>
+                        <li>
                             To display advertisements through Google AdSense and
                             other advertising partners
                         </li>
                         <li>
-                            To analyze website traffic and user behavior using
-                            Google Analytics
+                            To measure the effectiveness of our content and
+                            advertising campaigns
                         </li>
                         <li>
                             To respond to your inquiries and provide customer
@@ -301,8 +742,22 @@
                             <strong>Service Providers:</strong> We may share
                             information with trusted third-party service
                             providers who assist us in operating our Website,
-                            conducting our business, or servicing you (e.g.,
-                            Google for advertising and analytics).
+                            conducting our business, or servicing you. This
+                            includes:
+                            <ul style="margin-top: 0.5rem">
+                                <li>
+                                    Google Analytics (website analytics and
+                                    traffic analysis)
+                                </li>
+                                <li>
+                                    Google AdSense (advertising and
+                                    monetization)
+                                </li>
+                                <li>
+                                    Netlify (website hosting and content
+                                    delivery)
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <strong>Legal Requirements:</strong> We may disclose
@@ -316,6 +771,20 @@
                         </li>
                     </ul>
 
+                    <h2>Data Retention</h2>
+                    <p>
+                        Google Analytics retains user-level data for
+                        <strong>26 months</strong> by default. Aggregated data
+                        may be retained indefinitely. You can request deletion
+                        of your data by contacting us or using Google's data
+                        deletion tools.
+                    </p>
+                    <p>
+                        Contact form submissions are retained for as long as
+                        necessary to respond to your inquiry and for legitimate
+                        business purposes, typically up to 24 months.
+                    </p>
+
                     <h2>Data Security</h2>
                     <p>
                         We implement appropriate technical and organizational
@@ -326,6 +795,34 @@
                         strive to use commercially acceptable means to protect
                         your personal information, we cannot guarantee its
                         absolute security.
+                    </p>
+                    <p>
+                        All data transmission between your browser and our
+                        servers is encrypted using HTTPS/TLS protocols. We
+                        regularly review our security practices and update them
+                        as needed.
+                    </p>
+
+                    <h2>International Data Transfers</h2>
+                    <p>
+                        Your information, including data collected by Google
+                        Analytics and Google AdSense, may be transferred to and
+                        processed in countries outside of your country of
+                        residence, including the United States. These countries
+                        may have different data protection laws than your
+                        country.
+                    </p>
+                    <p>
+                        Google participates in and has certified its compliance
+                        with the EU-U.S. Data Privacy Framework (DPF). For more
+                        information, please visit
+                        <a
+                            href="https://www.dataprivacyframework.gov/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            DataPrivacyFramework.gov </a
+                        >.
                     </p>
 
                     <h2>Your Rights Under GDPR</h2>
@@ -346,7 +843,7 @@
                         <li>
                             <strong>Right to Erasure:</strong> You have the
                             right to request deletion of your personal data
-                            under certain conditions.
+                            under certain conditions ("Right to be Forgotten").
                         </li>
                         <li>
                             <strong>Right to Restrict Processing:</strong> You
@@ -356,30 +853,47 @@
                         <li>
                             <strong>Right to Data Portability:</strong> You have
                             the right to request transfer of your data to
-                            another organization.
+                            another organization in a structured,
+                            machine-readable format.
                         </li>
                         <li>
                             <strong>Right to Object:</strong> You have the right
-                            to object to processing of your personal data.
+                            to object to processing of your personal data,
+                            including for direct marketing purposes.
+                        </li>
+                        <li>
+                            <strong>Right to Withdraw Consent:</strong> Where
+                            processing is based on consent, you have the right
+                            to withdraw consent at any time without affecting
+                            the lawfulness of processing based on consent before
+                            its withdrawal.
                         </li>
                     </ul>
                     <p>
                         To exercise any of these rights, please contact us at
                         <a href="mailto:himanshmewada08@gmail.com"
                             >himanshmewada08@gmail.com</a
-                        >.
+                        >. We will respond to your request within 30 days.
+                    </p>
+                    <p>
+                        You also have the right to lodge a complaint with your
+                        local data protection authority if you believe we have
+                        violated your privacy rights.
                     </p>
 
                     <h2>Your Rights Under CCPA</h2>
                     <p>
                         If you are a California resident, you have the following
-                        rights under the California Consumer Privacy Act:
+                        rights under the California Consumer Privacy Act (CCPA)
+                        and California Privacy Rights Act (CPRA):
                     </p>
                     <ul>
                         <li>
                             <strong>Right to Know:</strong> Request disclosure
                             of what personal information we collect, use, and
-                            disclose.
+                            disclose, including the categories of personal
+                            information and the categories of third parties with
+                            whom we share it.
                         </li>
                         <li>
                             <strong>Right to Delete:</strong> Request deletion
@@ -387,21 +901,54 @@
                             exceptions.
                         </li>
                         <li>
+                            <strong>Right to Correct:</strong> Request
+                            correction of inaccurate personal information.
+                        </li>
+                        <li>
                             <strong>Right to Opt-Out:</strong> Opt out of the
-                            sale of your personal information.
+                            sale or sharing of your personal information.
                             <em>We do not sell personal information.</em>
+                            However, our use of cookies for advertising may
+                            constitute "sharing" under CPRA. You can opt out via
+                            our
+                            <a
+                                href="#"
+                                onclick="
+                                    showCookiePreferences(event);
+                                    return false;
+                                "
+                            >
+                                Cookie Preferences
+                            </a>
+                            or the
+                            <a
+                                href="https://www.aboutads.info/choices/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Global Privacy Control </a
+                            >.
+                        </li>
+                        <li>
+                            <strong
+                                >Right to Limit Use of Sensitive Personal
+                                Information:</strong
+                            >
+                            We do not collect sensitive personal information as
+                            defined by CPRA.
                         </li>
                         <li>
                             <strong>Right to Non-Discrimination:</strong> You
                             will not be discriminated against for exercising
-                            your CCPA rights.
+                            your CCPA/CPRA rights.
                         </li>
                     </ul>
                     <p>
                         To exercise your rights, contact us at
                         <a href="mailto:himanshmewada08@gmail.com"
                             >himanshmewada08@gmail.com</a
-                        >.
+                        >. We will verify your identity before processing your
+                        request.
                     </p>
 
                     <h2 id="terms">Children's Privacy</h2>
@@ -412,6 +959,12 @@
                         and believe your child has provided us with personal
                         information, please contact us so we can delete it.
                     </p>
+                    <p>
+                        If we become aware that we have collected personal
+                        information from a child under 13 without parental
+                        consent, we will take steps to delete that information
+                        as quickly as possible.
+                    </p>
 
                     <h2>Third-Party Links</h2>
                     <p>
@@ -421,21 +974,39 @@
                         review the privacy policies of any third-party sites you
                         visit.
                     </p>
+                    <p>
+                        This Privacy Policy does not apply to any third-party
+                        services or websites that you access through links on
+                        our Website.
+                    </p>
 
                     <h2>Changes to This Privacy Policy</h2>
                     <p>
-                        We may update this Privacy Policy from time to time. We
-                        will notify you of any changes by posting the new
-                        Privacy Policy on this page and updating the "Last
-                        updated" date. You are advised to review this Privacy
-                        Policy periodically for any changes. Changes are
-                        effective when posted.
+                        We may update this Privacy Policy from time to time to
+                        reflect changes in our practices, services, or legal
+                        requirements. We will notify you of any material changes
+                        by:
+                    </p>
+                    <ul>
+                        <li>Posting the new Privacy Policy on this page</li>
+                        <li>Updating the "Last updated" date at the top</li>
+                        <li>
+                            Displaying a prominent notice on our Website for
+                            significant changes
+                        </li>
+                    </ul>
+                    <p>
+                        You are advised to review this Privacy Policy
+                        periodically for any changes. Changes are effective when
+                        posted. Your continued use of the Website after changes
+                        constitutes acceptance of the updated policy.
                     </p>
 
                     <h2>Contact Us</h2>
                     <p>
                         If you have any questions about this Privacy Policy,
-                        please contact us:
+                        wish to exercise your privacy rights, or have concerns
+                        about our data practices, please contact us:
                     </p>
                     <ul>
                         <li>
@@ -449,6 +1020,12 @@
                             <a href="contact.html">Contact page</a>
                         </li>
                     </ul>
+                    <p>
+                        We aim to respond to all privacy-related inquiries
+                        within 30 days. For GDPR-related requests, we will
+                        respond within one month, which may be extended by two
+                        months for complex requests.
+                    </p>
 
                     <p
                         style="
@@ -460,8 +1037,8 @@
                         "
                     >
                         This Privacy Policy was created to comply with Google
-                        AdSense program policies, GDPR, CCPA, and CalOPPA
-                        requirements.
+                        Analytics Terms of Service, Google AdSense program
+                        policies, GDPR, CCPA/CPRA, and CalOPPA requirements.
                     </p>
                 </div>
             </div>
@@ -521,6 +1098,17 @@
                                     >Cookie Policy</a
                                 >
                             </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    onclick="
+                                        showCookiePreferences(event);
+                                        return false;
+                                    "
+                                >
+                                    Cookie Preferences
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -528,11 +1116,209 @@
                     <p>
                         &copy; 2026 Chess Beast. All rights reserved. |
                         <a href="privacy-policy.html">Privacy Policy</a> |
-                        <a href="contact.html">Contact</a>
+                        <a href="contact.html">Contact</a> |
+                        <a
+                            href="#"
+                            onclick="
+                                showCookiePreferences(event);
+                                return false;
+                            "
+                            >Cookie Preferences</a
+                        >
                     </p>
                 </div>
             </div>
         </footer>
+
+        <script>
+            // Cookie Consent Management
+            (function () {
+                const COOKIE_CONSENT_KEY = "chessbeast_cookie_consent";
+                const COOKIE_PREFERENCES_KEY = "chessbeast_cookie_preferences";
+
+                // Default preferences
+                const defaultPreferences = {
+                    essential: true,
+                    analytics: true,
+                    advertising: true,
+                    timestamp: null,
+                };
+
+                function getPreferences() {
+                    try {
+                        const stored = localStorage.getItem(
+                            COOKIE_PREFERENCES_KEY,
+                        );
+                        return stored ? JSON.parse(stored) : null;
+                    } catch (e) {
+                        return null;
+                    }
+                }
+
+                function savePreferences(prefs) {
+                    prefs.timestamp = new Date().toISOString();
+                    localStorage.setItem(
+                        COOKIE_PREFERENCES_KEY,
+                        JSON.stringify(prefs),
+                    );
+                    localStorage.setItem(COOKIE_CONSENT_KEY, "true");
+                }
+
+                function loadPreferences() {
+                    const prefs = getPreferences();
+                    if (prefs) {
+                        updateToggleUI("toggle-analytics", prefs.analytics);
+                        updateToggleUI("toggle-advertising", prefs.advertising);
+                    }
+                }
+
+                function updateToggleUI(id, active) {
+                    const toggle = document.getElementById(id);
+                    if (toggle) {
+                        if (active) toggle.classList.add("active");
+                        else toggle.classList.remove("active");
+                    }
+                }
+
+                function shouldShowBanner() {
+                    const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+                    return !consent;
+                }
+
+                function showBanner() {
+                    const banner = document.getElementById("cookie-banner");
+                    if (banner && shouldShowBanner()) {
+                        banner.classList.add("active");
+                    }
+                }
+
+                window.acceptAllCookies = function () {
+                    const prefs = { ...defaultPreferences };
+                    savePreferences(prefs);
+                    document
+                        .getElementById("cookie-banner")
+                        .classList.remove("active");
+                    document
+                        .getElementById("cookie-modal")
+                        .classList.remove("active");
+                    // Enable Google Analytics
+                    gtag("consent", "update", {
+                        analytics_storage: "granted",
+                        ad_storage: "granted",
+                        ad_user_data: "granted",
+                        ad_personalization: "granted",
+                    });
+                };
+
+                window.declineCookies = function () {
+                    const prefs = {
+                        essential: true,
+                        analytics: false,
+                        advertising: false,
+                        timestamp: new Date().toISOString(),
+                    };
+                    savePreferences(prefs);
+                    document
+                        .getElementById("cookie-banner")
+                        .classList.remove("active");
+                    document
+                        .getElementById("cookie-modal")
+                        .classList.remove("active");
+                    // Disable non-essential cookies
+                    gtag("consent", "update", {
+                        analytics_storage: "denied",
+                        ad_storage: "denied",
+                        ad_user_data: "denied",
+                        ad_personalization: "denied",
+                    });
+                };
+
+                window.showCookiePreferences = function (e) {
+                    if (e) e.preventDefault();
+                    loadPreferences();
+                    document
+                        .getElementById("cookie-modal")
+                        .classList.add("active");
+                };
+
+                window.closeCookieModal = function (e) {
+                    if (e && e.target.id !== "cookie-modal") return;
+                    document
+                        .getElementById("cookie-modal")
+                        .classList.remove("active");
+                };
+
+                window.toggleCookieCategory = function (category) {
+                    const toggle = document.getElementById(
+                        "toggle-" + category,
+                    );
+                    if (toggle) toggle.classList.toggle("active");
+                };
+
+                window.saveCookiePreferences = function () {
+                    const analytics = document
+                        .getElementById("toggle-analytics")
+                        .classList.contains("active");
+                    const advertising = document
+                        .getElementById("toggle-advertising")
+                        .classList.contains("active");
+
+                    const prefs = {
+                        essential: true,
+                        analytics: analytics,
+                        advertising: advertising,
+                        timestamp: new Date().toISOString(),
+                    };
+                    savePreferences(prefs);
+                    document
+                        .getElementById("cookie-banner")
+                        .classList.remove("active");
+                    document
+                        .getElementById("cookie-modal")
+                        .classList.remove("active");
+
+                    // Update Google Consent Mode
+                    gtag("consent", "update", {
+                        analytics_storage: analytics ? "granted" : "denied",
+                        ad_storage: advertising ? "granted" : "denied",
+                        ad_user_data: advertising ? "granted" : "denied",
+                        ad_personalization: advertising ? "granted" : "denied",
+                    });
+                };
+
+                // Initialize on page load
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Set default consent to denied until user consents
+                    gtag("consent", "default", {
+                        analytics_storage: "denied",
+                        ad_storage: "denied",
+                        ad_user_data: "denied",
+                        ad_personalization: "denied",
+                    });
+
+                    const prefs = getPreferences();
+                    if (prefs) {
+                        // Apply stored preferences
+                        gtag("consent", "update", {
+                            analytics_storage: prefs.analytics
+                                ? "granted"
+                                : "denied",
+                            ad_storage: prefs.advertising
+                                ? "granted"
+                                : "denied",
+                            ad_user_data: prefs.advertising
+                                ? "granted"
+                                : "denied",
+                            ad_personalization: prefs.advertising
+                                ? "granted"
+                                : "denied",
+                        });
+                    } else {
+                        showBanner();
+                    }
+                });
+            })();
+        </script>
 
         <script>
             (window.adsbygoogle = window.adsbygoogle || []).push({});
