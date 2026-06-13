@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Chess vs AI — Free Online Chess Game | Chess Beast</title>
+    <meta name="description" content="Play chess online for free against a powerful AI engine rated ~2100 ELO. Choose White or Black and test your skills. No registration required.">
+    <meta name="keywords" content="play chess online, chess vs AI, free chess game, chess engine, online chess, chess AI opponent">
+    <meta name="author" content="Chess Beast">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://6a2cd4bd62cdf35db3fb0080--starlit-phoenix-8d6c7b.netlify.app/play.html">
+    <meta property="og:title" content="Play Chess vs AI — Free Online Chess Game">
+    <meta property="og:description" content="Challenge our powerful chess engine. Choose your side and play instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://6a2cd4bd62cdf35db3fb0080--starlit-phoenix-8d6c7b.netlify.app/play.html">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <a href="index.html" class="nav-brand">
+            <span class="logo-icon">&#9820;</span>
+            <span>Chess Beast</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Toggle navigation">&#9776;</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="play.html" class="active">Play Chess</a></li>
+            <li><a href="puzzles.html">Puzzles</a></li>
+            <li><a href="learn.html">Learn</a></li>
+            <li><a href="openings.html">Openings</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-content">
+        <!-- Breadcrumbs -->
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> &rsaquo; <span>Play Chess</span>
+            </div>
+        </div>
+
+        <!-- Top Banner Ad -->
+        <div class="container">
+            <p class="ad-label">Advertisement</p>
+            <div class="ad-slot ad-leaderboard">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="PLAYBANNER1"></ins>
+            </div>
+        </div>
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="container">
+                <h1>Play Chess vs AI</h1>
+                <p>Challenge our chess engine rated ~2100 ELO. Choose your color and make your move.</p>
+            </div>
+        </div>
+
+        <!-- Game Area with Sidebar Ad -->
+        <div class="container">
+            <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;align-items:flex-start;">
+                <!-- Main Game Area -->
+                <div style="flex:1;min-width:300px;max-width:fit-content;">
+                    <!-- Color choice screen -->
+                    <div id="color-picker">
+                        <h1 style="font-size:2rem;">Chess</h1>
+                        <p>Choose your side to begin</p>
+                        <div class="piece-choice">
+                            <button class="choice-btn" onclick="startGame('white')">
+                                <span class="piece-icon">&#9812;</span>
+                                Play White
+                            </button>
+                            <button class="choice-btn" onclick="startGame('black')">
+                                <span class="piece-icon">&#9818;</span>
+                                Play Black
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Game screen -->
+                    <div id="game">
+                        <div id="board-wrap">
+                            <div id="board-outer">
+                                <div class="coord-col" id="rank-labels"></div>
+                                <div id="board"></div>
+                            </div>
+                            <div class="coord-row" id="file-labels"></div>
+                        </div>
+
+                        <div id="panel">
+                            <div class="card">
+                                <div id="ai-badge">AI &middot; ~2100 ELO</div>
+                                <div id="status-title">White to move</div>
+                                <div id="status-text">Select a piece to begin.</div>
+                                <div id="thinking-indicator">
+                                    <div class="dot-pulse"><span></span><span></span><span></span></div>
+                                    Thinking&hellip;
+                                </div>
+                            </div>
+
+                            <div class="card" id="captured-wrap">
+                                <div class="cap-label">Captured by you</div>
+                                <div class="captured-row" id="cap-by-player"></div>
+                                <div class="cap-label" style="margin-top:8px">Captured by AI</div>
+                                <div class="captured-row" id="cap-by-ai"></div>
+                            </div>
+
+                            <div class="card">
+                                <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:8px">Move history</div>
+                                <div id="moves-list"></div>
+                            </div>
+
+                            <button id="btn-new" onclick="newGame()">New Game</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Ad -->
+                <div class="ad-sidebar" style="flex-shrink:0;">
+                    <p class="ad-label">Advertisement</p>
+                    <div class="ad-slot ad-half-page">
+                        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="PLAYSIDEBAR1"></ins>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- In-Content Ad -->
+        <div class="container">
+            <p class="ad-label">Advertisement</p>
+            <div class="ad-slot ad-in-content">
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="PLAYINCONTENT1"></ins>
+            </div>
+        </div>
+
+        <!-- Game Info Section -->
+        <section class="games-section">
+            <div class="container">
+                <div class="article-content" style="padding:0;">
+                    <h2>How to Play</h2>
+                    <p>Click on any of your pieces to see its available moves highlighted on the board. Green dots indicate safe squares, while capture opportunities are shown with a ring indicator. Click a highlighted square to move your piece there.</p>
+
+                    <h2>About the AI</h2>
+                    <p>Our chess engine uses the minimax algorithm with alpha-beta pruning and quiescence search to deliver a challenging opponent rated at approximately 2100 ELO. It evaluates positions using piece-square tables and understands tactical nuances like forks, pins, and discovered attacks.</p>
+
+                    <h2>Special Moves</h2>
+                    <ul>
+                        <li><strong>Castling</strong> — Move your king two squares toward a rook to castle kingside (O-O) or queenside (O-O-O). Available if neither piece has moved and the path is clear.</li>
+                        <li><strong>En Passant</strong> — Capture an opponent's pawn that has just moved two squares forward as if it had moved only one.</li>
+                        <li><strong>Pawn Promotion</strong> — When a pawn reaches the far rank, it automatically promotes to a Queen.</li>
+                    </ul>
+
+                    <h2>Game Modes</h2>
+                    <p>Choose <strong>White</strong> to move first and control the initiative, or choose <strong>Black</strong> to play defensively and let the AI make the first move. You can start a new game at any time by clicking the "New Game" button.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Result overlay -->
+    <div id="result-overlay">
+        <div id="result-box">
+            <h2 id="result-title">Game Over</h2>
+            <p id="result-desc"></p>
+            <button onclick="newGame()">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Footer Ad -->
+    <div class="container">
+        <p class="ad-label">Advertisement</p>
+        <div class="ad-slot ad-banner">
+            <ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="PLAYFOOTER1"></ins>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Play</h4>
+                    <ul>
+                        <li><a href="play.html">Play vs AI</a></li>
+                        <li><a href="puzzles.html">Chess Puzzles</a></li>
+                        <li><a href="learn.html">Learn Chess</a></li>
+                        <li><a href="openings.html">Openings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="learn.html#rules">Game Rules</a></li>
+                        <li><a href="learn.html#strategy">Strategy Tips</a></li>
+                        <li><a href="openings.html">Opening Database</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="about.html">About Chess Beast</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="privacy-policy.html#cookies">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Chess Beast. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="contact.html">Contact</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="chess.js"></script>
+    <script>
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+</html>

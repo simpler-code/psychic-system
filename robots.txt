@@ -1,0 +1,31 @@
+# ═══════════════════════════════════════════════════════════════
+#  Chess Beast — Robots.txt
+#  SEO configuration for Googlebot and other crawlers
+#  ═══════════════════════════════════════════════════════════════
+
+# Allow all crawlers
+User-agent: *
+
+# Sitemap location
+Sitemap: https://6a2cd4bd62cdf35db3fb0080--starlit-phoenix-8d6c7b.netlify.app/sitemap.xml
+
+# Allow all pages to be crawled and indexed
+Allow: /
+Allow: /index.html
+Allow: /play.html
+Allow: /puzzles.html
+Allow: /learn.html
+Allow: /openings.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /privacy-policy.html
+Allow: /styles.css
+Allow: /chess.js
+Allow: /puzzles.js
+
+# Disallow access to unnecessary files
+Disallow: /README.md
+Disallow: /*.md$
+
+# Crawl delay to be respectful (optional)
+Crawl-delay: 1

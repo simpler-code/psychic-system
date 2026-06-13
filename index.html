@@ -3,84 +3,407 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Chess — Play vs AI</title>
-        <link rel="stylesheet" href="index.css" />
+        <title>
+            Chess Beast — Play Chess Online vs AI | Free Chess Games & Puzzles
+        </title>
+        <meta
+            name="description"
+            content="Play free chess online against a powerful AI engine. Solve chess puzzles, learn openings, and improve your game at Chess Beast."
+        />
+        <meta
+            name="keywords"
+            content="chess, play chess online, chess AI, chess puzzles, chess openings, free chess game, chess engine"
+        />
+        <meta name="author" content="Chess Beast" />
+        <meta name="robots" content="index, follow" />
+        <link
+            rel="canonical"
+            href="https://6a2cd4bd62cdf35db3fb0080--starlit-phoenix-8d6c7b.netlify.app/"
+        />
+        <meta
+            property="og:title"
+            content="Chess Beast — Play Chess Online vs AI"
+        />
+        <meta
+            property="og:description"
+            content="Play free chess online against a powerful AI engine. Solve puzzles and learn chess."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://6a2cd4bd62cdf35db3fb0080--starlit-phoenix-8d6c7b.netlify.app/"
+        />
+        <meta
+            property="og:image"
+            content="https://6a2cd4bd62cdf35db3fb0080--starlit-phoenix-8d6c7b.netlify.app/og-image.jpg"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="stylesheet" href="styles.css" />
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2041950116232110"
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body>
-        <!-- Color choice screen -->
-        <div id="color-picker">
-            <h1>Chess</h1>
-            <p>Choose your side to begin</p>
-            <div class="piece-choice">
-                <button class="choice-btn" onclick="startGame('white')">
-                    <span class="piece-icon">♔</span>
-                    Play White
-                </button>
-                <button class="choice-btn" onclick="startGame('black')">
-                    <span class="piece-icon">♚</span>
-                    Play Black
-                </button>
-            </div>
-        </div>
+        <!-- Navigation -->
+        <nav class="site-nav">
+            <a href="index.html" class="nav-brand">
+                <span class="logo-icon">&#9820;</span>
+                <span>Chess Beast</span>
+            </a>
+            <button
+                class="nav-toggle"
+                onclick="
+                    document
+                        .querySelector('.nav-links')
+                        .classList.toggle('active')
+                "
+                aria-label="Toggle navigation"
+            >
+                &#9776;
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="play.html">Play Chess</a></li>
+                <li><a href="puzzles.html">Puzzles</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="openings.html">Openings</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-        <!-- Game screen -->
-        <div id="game">
-            <div id="board-wrap">
-                <div id="board-outer">
-                    <div class="coord-col" id="rank-labels"></div>
-                    <div id="board"></div>
-                </div>
-                <div class="coord-row" id="file-labels"></div>
-            </div>
-
-            <div id="panel">
-                <div class="card">
-                    <div id="ai-badge">AI · ~2100 ELO</div>
-                    <div id="status-title">White to move</div>
-                    <div id="status-text">Select a piece to begin.</div>
-                    <div id="thinking-indicator">
-                        <div class="dot-pulse">
-                            <span></span><span></span><span></span>
-                        </div>
-                        Thinking…
+        <div class="page-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <h1>Master the Game of <span>Chess</span></h1>
+                    <p>
+                        Play against a powerful AI engine rated ~2100 ELO, solve
+                        interactive puzzles, and learn winning strategies — all
+                        for free.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="play.html" class="btn btn-primary"
+                            >&#9812; Play Now</a
+                        >
+                        <a href="puzzles.html" class="btn btn-secondary"
+                            >Solve Puzzles</a
+                        >
                     </div>
                 </div>
+            </section>
 
-                <div class="card" id="captured-wrap">
-                    <div class="cap-label">Captured by you</div>
-                    <div class="captured-row" id="cap-by-player"></div>
-                    <div class="cap-label" style="margin-top: 8px">
-                        Captured by AI
-                    </div>
-                    <div class="captured-row" id="cap-by-ai"></div>
-                </div>
-
-                <div class="card">
-                    <div
+            <!-- Top Banner Ad -->
+            <div class="container">
+                <p class="ad-label">Advertisement</p>
+                <div class="ad-slot ad-leaderboard">
+                    <ins
+                        class="adsbygoogle"
                         style="
-                            font-size: 0.75rem;
-                            color: var(--text-muted);
-                            margin-bottom: 8px;
+                            display: inline-block;
+                            width: 728px;
+                            height: 90px;
                         "
-                    >
-                        Move history
-                    </div>
-                    <div id="moves-list"></div>
+                        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                        data-ad-slot="HOMEBANNER1"
+                    ></ins>
                 </div>
+            </div>
 
-                <button id="btn-new" onclick="newGame()">New Game</button>
+            <!-- Games Section -->
+            <section class="games-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Choose Your Game Mode</h2>
+                        <p>
+                            Select from a variety of chess experiences designed
+                            to challenge and improve your skills.
+                        </p>
+                    </div>
+                    <div class="games-grid">
+                        <a href="play.html" class="game-card">
+                            <span class="card-icon">&#9818;</span>
+                            <h3>Play vs AI</h3>
+                            <p>
+                                Challenge our powerful chess engine rated at
+                                approximately 2100 ELO. Choose your side and
+                                test your skills.
+                            </p>
+                            <span class="card-tag">&#9733; Most Popular</span>
+                        </a>
+                        <a href="puzzles.html" class="game-card">
+                            <span class="card-icon">&#9821;</span>
+                            <h3>Chess Puzzles</h3>
+                            <p>
+                                Solve mate-in-1 and mate-in-2 puzzles to sharpen
+                                your tactical vision and pattern recognition.
+                            </p>
+                            <span class="card-tag">Train Tactics</span>
+                        </a>
+                        <a href="learn.html" class="game-card">
+                            <span class="card-icon">&#9822;</span>
+                            <h3>Learn Chess</h3>
+                            <p>
+                                Master the rules, piece movements, castling, en
+                                passant, and fundamental strategies from
+                                scratch.
+                            </p>
+                            <span class="card-tag">Beginner Friendly</span>
+                        </a>
+                        <a href="openings.html" class="game-card">
+                            <span class="card-icon">&#9820;</span>
+                            <h3>Opening Explorer</h3>
+                            <p>
+                                Browse and study popular chess openings
+                                including Italian Game, Sicilian Defense,
+                                Queen's Gambit and more.
+                            </p>
+                            <span class="card-tag">Study</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- In-Content Ad -->
+            <div class="container">
+                <p class="ad-label">Advertisement</p>
+                <div class="ad-slot ad-in-content">
+                    <ins
+                        class="adsbygoogle"
+                        style="
+                            display: inline-block;
+                            width: 728px;
+                            height: 90px;
+                        "
+                        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                        data-ad-slot="HOMEINCONTENT1"
+                    ></ins>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Why Chess Beast?</h2>
+                        <p>
+                            Everything you need to learn, play, and master
+                            chess.
+                        </p>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">&#9889;</div>
+                            <h3>Powerful AI Engine</h3>
+                            <p>
+                                Our chess AI uses advanced minimax with
+                                alpha-beta pruning, delivering a challenging
+                                ~2100 ELO experience.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">&#127919;</div>
+                            <h3>Interactive Puzzles</h3>
+                            <p>
+                                Hundreds of curated puzzles help you recognize
+                                patterns and improve your tactical calculation
+                                speed.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">&#128218;</div>
+                            <h3>Learn & Improve</h3>
+                            <p>
+                                Comprehensive guides covering rules, openings,
+                                middle-game strategy, and endgame technique.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">&#128241;</div>
+                            <h3>Mobile Friendly</h3>
+                            <p>
+                                Play on any device — desktop, tablet, or
+                                smartphone. The board adapts perfectly to your
+                                screen.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">&#128275;</div>
+                            <h3>100% Free</h3>
+                            <p>
+                                No registration, no downloads, no paywalls. Just
+                                open your browser and start playing instantly.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">&#128640;</div>
+                            <h3>Fast & Lightweight</h3>
+                            <p>
+                                Built with pure HTML, CSS, and JavaScript. No
+                                heavy frameworks — loads in milliseconds.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom Banner Ad -->
+            <div class="container">
+                <p class="ad-label">Advertisement</p>
+                <div class="ad-slot ad-leaderboard">
+                    <ins
+                        class="adsbygoogle"
+                        style="
+                            display: inline-block;
+                            width: 728px;
+                            height: 90px;
+                        "
+                        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                        data-ad-slot="HOMEBOTTOM1"
+                    ></ins>
+                </div>
+            </div>
+
+            <!-- Getting Started Section -->
+            <section class="games-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Getting Started</h2>
+                        <p>
+                            New to chess? Follow these simple steps to begin
+                            your journey.
+                        </p>
+                    </div>
+                    <div class="article-content" style="padding: 0">
+                        <ol
+                            style="
+                                max-width: 700px;
+                                margin: 0 auto;
+                                font-size: 1.05rem;
+                            "
+                        >
+                            <li style="margin-bottom: 1rem">
+                                <strong>Learn the Rules</strong> — Visit our
+                                <a href="learn.html">Learn Chess</a> page to
+                                understand how each piece moves, special rules
+                                like castling and en passant, and how games are
+                                won or drawn.
+                            </li>
+                            <li style="margin-bottom: 1rem">
+                                <strong>Play Your First Game</strong> — Head to
+                                <a href="play.html">Play Chess</a> and choose
+                                your color. Click any piece to see its legal
+                                moves highlighted on the board.
+                            </li>
+                            <li style="margin-bottom: 1rem">
+                                <strong>Solve Puzzles</strong> — Train your
+                                tactical eye with our
+                                <a href="puzzles.html">Chess Puzzles</a>. Start
+                                with mate-in-1 and work your way up.
+                            </li>
+                            <li style="margin-bottom: 1rem">
+                                <strong>Study Openings</strong> — Browse our
+                                <a href="openings.html">Opening Explorer</a> to
+                                learn popular first moves and their strategic
+                                ideas.
+                            </li>
+                        </ol>
+                        <div class="text-center mt-2">
+                            <a href="play.html" class="btn btn-primary"
+                                >Start Playing Now</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer Ad -->
+        <div class="container">
+            <p class="ad-label">Advertisement</p>
+            <div class="ad-slot ad-banner">
+                <ins
+                    class="adsbygoogle"
+                    style="display: inline-block; width: 468px; height: 60px"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                    data-ad-slot="HOMEFOOTER1"
+                ></ins>
             </div>
         </div>
 
-        <!-- Result overlay -->
-        <div id="result-overlay">
-            <div id="result-box">
-                <h2 id="result-title">Game Over</h2>
-                <p id="result-desc"></p>
-                <button onclick="newGame()">Play Again</button>
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4>Play</h4>
+                        <ul>
+                            <li><a href="play.html">Play vs AI</a></li>
+                            <li><a href="puzzles.html">Chess Puzzles</a></li>
+                            <li><a href="learn.html">Learn Chess</a></li>
+                            <li><a href="openings.html">Openings</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="learn.html#rules">Game Rules</a></li>
+                            <li>
+                                <a href="learn.html#strategy">Strategy Tips</a>
+                            </li>
+                            <li>
+                                <a href="openings.html">Opening Database</a>
+                            </li>
+                            <li><a href="puzzles.html">Tactics Trainer</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="about.html">About Chess Beast</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li>
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li>
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="privacy-policy.html#cookies"
+                                    >Cookie Policy</a
+                                >
+                            </li>
+                            <li>
+                                <a href="privacy-policy.html#terms"
+                                    >Terms of Use</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2026 Chess Beast. All rights reserved. |
+                        <a href="privacy-policy.html">Privacy Policy</a> |
+                        <a href="contact.html">Contact</a>
+                    </p>
+                </div>
             </div>
-        </div>
+        </footer>
 
-        <script src="index.js"></script>
+        <script>
+            // Initialize AdSense ads
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </body>
 </html>
